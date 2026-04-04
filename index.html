@@ -21,7 +21,7 @@
             overflow: hidden;
         }
 
-        /* --- MENÚ DE SELECCIÓN --- */
+        /* MDS */
         #menu-overlay {
             position: fixed;
             inset: 0;
@@ -42,7 +42,7 @@
         }
         .opt-btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-5px); }
 
-        /* --- ESTRUCTURA BASE --- */
+        /* EB */
         .main-wrapper { height: 100vh; width: 100%; }
         section {
             height: 100vh; width: 100%;
@@ -55,32 +55,32 @@
             opacity: 0.25; z-index: -1; background-image: var(--img);
         }
 
-        /* Imágenes de fondo reordenadas */
+        
         section:nth-child(1) { --img: url('https://www.ecartelera.com/images/img/16700/16779_el-secreto-de-sus-ojos.webp'); }
         section:nth-child(2) { --img: url('https://www.ecartelera.com/images/img/16700/16781_el-secreto-de-sus-ojos.webp'); }
         section:nth-child(3) { --img: url('https://m.media-amazon.com/images/M/MV5BMTIzOGIxNmYtNjRhZC00NzVmLTk2NTgtYjQyZWJiNThhMWJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'); }
         section:nth-child(4) { --img: url('https://www.ecartelera.com/images/img/16700/16784_el-secreto-de-sus-ojos.webp'); }
 
-        /* MODO LECTURA */
+        /* ML */
         .mode-scroll { overflow-y: auto !important; }
         .mode-scroll section { scroll-snap-align: start; position: relative; opacity: 1; transform: none; }
         .mode-scroll .content { width: 100%; max-width: 1000px; border-left: 4px solid var(--accent); padding-left: 30px; }
         .mode-scroll h2 { font-size: 3rem; margin: 0 0 30px 0; color: var(--accent); }
 
-        /* MODO EXPOSICIÓN */
+        /* ME */
         .mode-slides { overflow: hidden !important; }
         .mode-slides section { position: absolute; opacity: 0; pointer-events: none; transform: scale(1.05); transition: 0.6s ease; }
         .mode-slides section.active { opacity: 1; pointer-events: all; transform: scale(1); }
         .mode-slides .content { width: 100%; max-width: 1000px; text-align: left; }
         .mode-slides h2 { font-size: 3rem; margin: 0 0 30px 0; }
 
-        /* COMPONENTES */
+        
         .tag { background: var(--accent); padding: 4px 12px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .card { background: var(--card-bg); padding: 20px; border: 1px solid #333; }
         .video-box { width: 100%; max-width: 600px; aspect-ratio: 16/9; border: 1px solid #444; }
 
-        /* NAVEGACIÓN */
+        
         .controls { position: fixed; bottom: 30px; right: 30px; display: none; gap: 15px; z-index: 500; }
         .btn-nav { width: 50px; height: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; border-radius: 50%; cursor: pointer; }
         .back-menu { position: fixed; top: 20px; right: 20px; background: transparent; color: #666; border: 1px solid #333; padding: 5px 15px; cursor: pointer; font-size: 0.7rem; z-index: 600; }
