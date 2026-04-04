@@ -1,2 +1,0 @@
-# Juanlzro
-lazaro page
