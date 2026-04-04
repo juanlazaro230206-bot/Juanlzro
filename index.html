@@ -21,21 +21,21 @@
             overflow: hidden;
         }
 
-/* --- ADAPTACIÓN PARA MÓVILES --- */
+           /* AM */
         @media (max-width: 768px) {
             body, html {
                 /* Permitimos el scroll en móviles para que no se corte el contenido */
                 overflow-y: auto; 
             }
 
-            /* Menú Principal */
+            /* MP */
             #menu-overlay h1 {
                 text-align: center;
                 padding: 0 20px;
             }
 
             .options-container {
-                flex-direction: column; /* Botones uno sobre otro */
+                flex-direction: column;
                 width: 80%;
             }
 
@@ -45,11 +45,11 @@
                 font-size: 0.9rem;
             }
 
-            /* Secciones y Contenido */
+            
             section {
-                height: auto; /* Altura automática para que quepa el texto */
+                height: auto;
                 min-height: 100vh;
-                padding: 80px 20px; /* Espacio para los botones de arriba y abajo */
+                padding: 80px 20px;
             }
 
             .mode-scroll .content, .mode-slides .content {
@@ -58,13 +58,13 @@
             }
 
             h2, .mode-scroll h2, .mode-slides h2 {
-                font-size: 1.8rem !important; /* Títulos más pequeños */
+                font-size: 1.8rem !important;
                 margin-bottom: 20px;
             }
 
-            /* Ajuste de Grid y Tarjetas */
+            
             .grid {
-                grid-template-columns: 1fr; /* Una sola columna en móvil */
+                grid-template-columns: 1fr; 
                 gap: 15px;
             }
 
@@ -82,12 +82,12 @@
                 line-height: 1.4;
             }
 
-            /* Video */
+            
             .video-box {
                 max-width: 100%;
             }
 
-            /* Controles de Navegación */
+            
             .controls {
                 bottom: 10px;
                 right: 10px;
