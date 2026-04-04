@@ -21,6 +21,93 @@
             overflow: hidden;
         }
 
+/* --- ADAPTACIÓN PARA MÓVILES --- */
+        @media (max-width: 768px) {
+            body, html {
+                /* Permitimos el scroll en móviles para que no se corte el contenido */
+                overflow-y: auto; 
+            }
+
+            /* Menú Principal */
+            #menu-overlay h1 {
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .options-container {
+                flex-direction: column; /* Botones uno sobre otro */
+                width: 80%;
+            }
+
+            .opt-btn {
+                width: 100%;
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            /* Secciones y Contenido */
+            section {
+                height: auto; /* Altura automática para que quepa el texto */
+                min-height: 100vh;
+                padding: 80px 20px; /* Espacio para los botones de arriba y abajo */
+            }
+
+            .mode-scroll .content, .mode-slides .content {
+                padding-left: 15px;
+                border-left: 2px solid var(--accent);
+            }
+
+            h2, .mode-scroll h2, .mode-slides h2 {
+                font-size: 1.8rem !important; /* Títulos más pequeños */
+                margin-bottom: 20px;
+            }
+
+            /* Ajuste de Grid y Tarjetas */
+            .grid {
+                grid-template-columns: 1fr; /* Una sola columna en móvil */
+                gap: 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+                margin: 0 0 10px 0;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            /* Video */
+            .video-box {
+                max-width: 100%;
+            }
+
+            /* Controles de Navegación */
+            .controls {
+                bottom: 10px;
+                right: 10px;
+                width: 100%;
+                justify-content: center;
+                background: linear-gradient(transparent, rgba(0,0,0,0.8));
+                padding: 10px 0;
+            }
+
+            .btn-nav {
+                width: 45px;
+                height: 45px;
+            }
+
+            .back-menu {
+                background: rgba(0,0,0,0.7);
+                border-color: #444;
+            }
+        }
+        
         /* MDS */
         #menu-overlay {
             position: fixed;
