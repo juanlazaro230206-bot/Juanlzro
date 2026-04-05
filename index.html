@@ -21,94 +21,22 @@
             overflow: hidden;
         }
 
-           /* AM */
+        /* --- ADAPTACIÓN MÓVIL (Mantiene diseño original en PC) --- */
         @media (max-width: 768px) {
-            body, html {
-                /* Permitimos el scroll en móviles para que no se corte el contenido */
-                overflow-y: auto; 
-            }
-
-            /* MP */
-            #menu-overlay h1 {
-                text-align: center;
-                padding: 0 20px;
-            }
-
-            .options-container {
-                flex-direction: column;
-                width: 80%;
-            }
-
-            .opt-btn {
-                width: 100%;
-                padding: 15px;
-                font-size: 0.9rem;
-            }
-
-            
-            section {
-                height: auto;
-                min-height: 100vh;
-                padding: 80px 20px;
-            }
-
-            .mode-scroll .content, .mode-slides .content {
-                padding-left: 15px;
-                border-left: 2px solid var(--accent);
-            }
-
-            h2, .mode-scroll h2, .mode-slides h2 {
-                font-size: 1.8rem !important;
-                margin-bottom: 20px;
-            }
-
-            
-            .grid {
-                grid-template-columns: 1fr; 
-                gap: 15px;
-            }
-
-            .card {
-                padding: 15px;
-            }
-
-            .card h3 {
-                font-size: 1rem;
-                margin: 0 0 10px 0;
-            }
-
-            .card p {
-                font-size: 0.9rem;
-                line-height: 1.4;
-            }
-
-            
-            .video-box {
-                max-width: 100%;
-            }
-
-            
-            .controls {
-                bottom: 10px;
-                right: 10px;
-                width: 100%;
-                justify-content: center;
-                background: linear-gradient(transparent, rgba(0,0,0,0.8));
-                padding: 10px 0;
-            }
-
-            .btn-nav {
-                width: 45px;
-                height: 45px;
-            }
-
-            .back-menu {
-                background: rgba(0,0,0,0.7);
-                border-color: #444;
-            }
+            body, html { overflow-y: auto; }
+            #menu-overlay h1 { text-align: center; padding: 0 20px; }
+            .options-container { flex-direction: column; width: 80%; }
+            .opt-btn { width: 100%; padding: 15px; font-size: 0.9rem; }
+            section { height: auto; min-height: 100vh; padding: 80px 20px; }
+            .mode-scroll .content, .mode-slides .content { padding-left: 15px; border-left: 2px solid var(--accent); }
+            h2, .mode-scroll h2, .mode-slides h2 { font-size: 1.8rem !important; margin-bottom: 20px; }
+            .grid { grid-template-columns: 1fr; gap: 15px; }
+            .card { padding: 15px; }
+            .video-box { max-width: 100%; }
+            .controls { bottom: 10px; right: 10px; width: 100%; justify-content: center; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 10px 0; }
         }
-        
-        /* MDS */
+
+        /* MENU PRINCIPAL */
         #menu-overlay {
             position: fixed;
             inset: 0;
@@ -121,6 +49,11 @@
             transition: all 0.5s ease;
         }
 
+        /* ESTO ELIMINA LOS BOTONES AL OCULTAR EL MENÚ */
+        #menu-overlay[style*="opacity: 0"] {
+            display: none !important;
+        }
+
         .options-container { display: flex; gap: 20px; margin-top: 40px; }
         .opt-btn {
             padding: 20px 30px; border: 1px solid rgba(255,255,255,0.2);
@@ -129,7 +62,7 @@
         }
         .opt-btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-5px); }
 
-        /* EB */
+        /* CONTENEDORES */
         .main-wrapper { height: 100vh; width: 100%; }
         section {
             height: 100vh; width: 100%;
@@ -142,32 +75,28 @@
             opacity: 0.25; z-index: -1; background-image: var(--img);
         }
 
-        
         section:nth-child(1) { --img: url('https://www.ecartelera.com/images/img/16700/16779_el-secreto-de-sus-ojos.webp'); }
         section:nth-child(2) { --img: url('https://www.ecartelera.com/images/img/16700/16781_el-secreto-de-sus-ojos.webp'); }
         section:nth-child(3) { --img: url('https://m.media-amazon.com/images/M/MV5BMTIzOGIxNmYtNjRhZC00NzVmLTk2NTgtYjQyZWJiNThhMWJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'); }
         section:nth-child(4) { --img: url('https://www.ecartelera.com/images/img/16700/16784_el-secreto-de-sus-ojos.webp'); }
 
-        /* ML */
+        /* MODOS */
         .mode-scroll { overflow-y: auto !important; }
         .mode-scroll section { scroll-snap-align: start; position: relative; opacity: 1; transform: none; }
         .mode-scroll .content { width: 100%; max-width: 1000px; border-left: 4px solid var(--accent); padding-left: 30px; }
         .mode-scroll h2 { font-size: 3rem; margin: 0 0 30px 0; color: var(--accent); }
 
-        /* ME */
         .mode-slides { overflow: hidden !important; }
         .mode-slides section { position: absolute; opacity: 0; pointer-events: none; transform: scale(1.05); transition: 0.6s ease; }
         .mode-slides section.active { opacity: 1; pointer-events: all; transform: scale(1); }
         .mode-slides .content { width: 100%; max-width: 1000px; text-align: left; }
         .mode-slides h2 { font-size: 3rem; margin: 0 0 30px 0; }
 
-        
         .tag { background: var(--accent); padding: 4px 12px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .card { background: var(--card-bg); padding: 20px; border: 1px solid #333; }
         .video-box { width: 100%; max-width: 600px; aspect-ratio: 16/9; border: 1px solid #444; }
 
-        
         .controls { position: fixed; bottom: 30px; right: 30px; display: none; gap: 15px; z-index: 500; }
         .btn-nav { width: 50px; height: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; border-radius: 50%; cursor: pointer; }
         .back-menu { position: fixed; top: 20px; right: 20px; background: transparent; color: #666; border: 1px solid #333; padding: 5px 15px; cursor: pointer; font-size: 0.7rem; z-index: 600; }
@@ -184,12 +113,6 @@
         <p style="font-size: 0.9rem; font-weight: 400; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-top: 10px; text-transform: uppercase;">
             Arrigo / Demiras / Lázaro / Galdame
         </p>
-
-        <div class="options-container">
-            <button class="opt-btn" onclick="initApp('scroll')">Modo Lectura</button>
-            <button class="opt-btn" onclick="initApp('slides')">Modo Exposición</button>
-        </div>
-    </div>
 
         <div class="options-container">
             <button class="opt-btn" onclick="initApp('scroll')">Modo Lectura</button>
@@ -277,8 +200,9 @@
         const menu = document.getElementById('menu-overlay');
 
         function initApp(mode) {
+            // Oculta el menú y previene que bloquee clics
             menu.style.opacity = '0';
-            setTimeout(() => menu.style.visibility = 'hidden', 500);
+            menu.style.pointerEvents = 'none';
 
             if (mode === 'scroll') {
                 container.className = 'main-wrapper mode-scroll';
